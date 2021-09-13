@@ -2,11 +2,12 @@ import illustrationImg from "../Assets/images/illustration.svg";
 import logoImg from "../Assets/images/logo.svg";
 import "../Styles/auth.scss"
 import { Button } from "../Components/Button";
+import { AuthContext } from "../Contexts/AuthContext";
 import { useContext } from "react";
-import { TestContext } from "../App";
 
 export function NewRoom() {
 
+  const { user } = useContext(AuthContext)
  
 
   return (
@@ -21,7 +22,7 @@ export function NewRoom() {
       </aside>
       <main>
         <div className="main-content">
-          <img src={logoImg} alt="Letmeask" />
+          <img src={logoImg} alt="Letmeask" /> 
           <h2>Criar uma nova sala</h2>
           <form>
             <input type="text" placeholder="Nome da sala" />
